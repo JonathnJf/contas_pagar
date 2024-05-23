@@ -1,5 +1,6 @@
 package com.totvs.contas_pagar.adapter.entities;
 
+import com.totvs.contas_pagar.adapter.entities.dtos.ContaEntityDTO;
 import com.totvs.contas_pagar.domain.enums.SituacaoConta;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -12,8 +13,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="conta")
 @Builder

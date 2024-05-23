@@ -51,8 +51,8 @@ public class ContaRepositoryAdapter implements ContaRepositoryPort {
     }
     @Override
     public ResponseEntity<Object> findTotalValorPagoByPeriodo(LocalDate dataInicial, LocalDate dataFinal) {
-        BigDecimal valorTotal = contaRepository.findTotalValorPagoByPeriodo(dataInicial, dataFinal);
-        Map<String, BigDecimal> response = new HashMap<>();
+        Optional<BigDecimal> valorTotal = contaRepository.findTotalValorPagoByPeriodo(dataInicial, dataFinal);
+        Map<String, Optional<BigDecimal>> response = new HashMap<>();
         response.put("valorTotal", valorTotal);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
@@ -100,16 +100,14 @@ public class ContaRepositoryAdapter implements ContaRepositoryPort {
                                     .situacao(csvLine.getSituacao())
                                     .build();
                         } catch (Exception e) {
-                            System.err.println("Error mapping CSV line: " + csvLine);
                             e.printStackTrace();
                             throw e;
                         }
                     })
                     .collect(Collectors.toSet());
         } catch (RuntimeException e) {
-            // Log and handle the error
             e.printStackTrace();
-            throw new IOException("Error parsing CSV file", e);
+            throw new IOException("Erro ao executar o parsing CSV no arquivo", e);
         }
     }
 }
