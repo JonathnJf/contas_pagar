@@ -1,4 +1,4 @@
-package com.totvs.contas_pagar.adapter.infra.repository.upload;
+package com.totvs.contas_pagar.adapter.infra.upload;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvDate;

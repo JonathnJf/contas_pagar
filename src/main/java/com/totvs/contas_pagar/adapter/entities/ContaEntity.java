@@ -1,6 +1,5 @@
 package com.totvs.contas_pagar.adapter.entities;
 
-import com.totvs.contas_pagar.adapter.entities.dtos.ContaEntityDTO;
 import com.totvs.contas_pagar.domain.enums.SituacaoConta;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

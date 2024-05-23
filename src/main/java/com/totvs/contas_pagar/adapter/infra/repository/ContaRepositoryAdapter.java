@@ -4,7 +4,7 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.totvs.contas_pagar.adapter.entities.ContaEntity;
 import com.totvs.contas_pagar.adapter.entities.dtos.ContaEntityDTO;
-import com.totvs.contas_pagar.adapter.infra.repository.upload.ContaCsvRepresentation;
+import com.totvs.contas_pagar.adapter.infra.upload.ContaCsvRepresentation;
 import com.totvs.contas_pagar.domain.Conta;
 import com.totvs.contas_pagar.domain.enums.SituacaoConta;
 import com.totvs.contas_pagar.domain.ports.ContaRepositoryPort;

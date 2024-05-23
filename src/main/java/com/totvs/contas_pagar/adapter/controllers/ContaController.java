@@ -39,7 +39,9 @@ public class ContaController {
     public List<Conta> findAll(@RequestParam LocalDate dataInicial, @RequestParam LocalDate dataFinal,
                                @RequestParam String descricao, @RequestParam Integer pagina,
                                @RequestParam Integer itens) {
-        return contaServicePort.findByDataVencimentoBetweenAndDescricaoContaining(dataInicial, dataFinal, descricao, pagina, itens);
+        return contaServicePort.
+                findByDataVencimentoBetweenAndDescricaoContaining(dataInicial, dataFinal,
+                        descricao, pagina, itens);
     }
 
     @GetMapping("/{id}")
@@ -48,12 +50,14 @@ public class ContaController {
     }
 
     @GetMapping("/total-valor-pago")
-    public ResponseEntity<Object> getTotalValorPagoPeriodo(@RequestParam LocalDate dataInicial, @RequestParam LocalDate dataFinal) {
+    public ResponseEntity<Object> getTotalValorPagoPeriodo(@RequestParam LocalDate dataInicial,
+                                                           @RequestParam LocalDate dataFinal) {
         return  contaServicePort.findTotalValorPagoByPeriodo(dataInicial, dataFinal);
     }
 
     @PostMapping("/upload")
-    public ResponseEntity<Object> uploadContas (@RequestParam("file")MultipartFile file) throws IOException {
+    public ResponseEntity<Object> uploadContas (@RequestParam("file")MultipartFile file)
+            throws IOException {
         return ResponseEntity.ok(contaServicePort.uploadContas(file));
     }
 }
