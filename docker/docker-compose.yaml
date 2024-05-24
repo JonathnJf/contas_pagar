@@ -6,6 +6,6 @@ services:
     expose:
       - "5432"
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=totvs2
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=976431
+      - POSTGRES_DB=totvs
